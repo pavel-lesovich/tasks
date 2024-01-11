@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th></th>
+        <th>Order Year</th>
+        <th>Time To Ship In Days</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+        <td colspan="4" *ngIf="!yearSalesList || yearSalesList.length === 0">No Data</td>
+    </tr>
+    <tr *ngFor="let yearSales of yearSalesList" [class.selected]="isSelected(yearSales)">
+        
+        <td><button (click)="clickRow(yearSales)">></button></td>
+        <td>{{yearSales.orderYear}}</td>
+        <td>{{yearSales.timeToShipInDays}}</td>
+        <td>{{yearSales.total | currency:'GBP'}}</td>
+    </tr>
+</table>

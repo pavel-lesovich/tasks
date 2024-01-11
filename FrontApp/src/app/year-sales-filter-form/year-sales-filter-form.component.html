@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" #yearSalesForm="ngForm">
+    <label>Maximum Total</label>
+    <input type="number" id="maxTotal" name="maxTotal" min="0" required [(ngModel)]="model.maxTotal"
+        #maxTotal="ngModel" />
+    <button type="submit" [disabled]="!yearSalesForm.form.valid">Get Data</button>
+    <div [hidden]="maxTotal.valid || maxTotal.pristine" class="error-message">
+        Please enter a number
+    </div>
+</form>

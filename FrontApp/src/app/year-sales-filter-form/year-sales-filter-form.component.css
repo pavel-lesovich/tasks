@@ -1,0 +1,14 @@
+label {
+    margin-right: 4px;
+}
+
+input {
+    margin-right: 4px;
+    display: inline-block;
+    width: 180px;
+
+}
+
+.error-message {
+    color: #a94442;
+}

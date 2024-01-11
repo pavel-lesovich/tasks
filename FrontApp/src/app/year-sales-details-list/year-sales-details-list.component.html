@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <th>Order Date</th>
+        <th>Ship Date</th>
+        <th>Sales Order Id</th>
+        <th>Contact Name</th>
+        <th>Total</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td colspan="6" *ngIf="!yearSalesDetailsList || yearSalesDetailsList.length === 0">No Data</td>
+    </tr>
+    <tr *ngFor="let yearSalesDetails of yearSalesDetailsList">
+        <td>{{yearSalesDetails.orderDate}}</td>
+        <td>{{yearSalesDetails.shipDate}}</td>
+        <td>{{yearSalesDetails.salesOrderId}}</td>
+        <td>{{yearSalesDetails.contactName}}</td>
+        <td>{{yearSalesDetails.total | currency:'GBP'}}</td>
+        <td><a target="_blank" rel="noopener noreferrer" [href]="'https://www.google.com/search?q=' + getQuery(yearSalesDetails)">></a></td>
+    </tr>
+</table>

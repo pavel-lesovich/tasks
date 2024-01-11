@@ -1,0 +1,9 @@
+<section>
+    <app-year-sales-filter-form (getData)="onGetData($event)"></app-year-sales-filter-form>
+</section>
+<section class="list">
+    <app-year-sales-list [yearSalesList]="yearSalesList" [selectedYearSales]="selectedYearSales" (selectYearSales)="onSelectYearSales($event)"></app-year-sales-list>
+</section>
+<section class="list" *ngIf="yearSalesDetailsList">
+    <app-year-sales-details-list [yearSalesDetailsList]="yearSalesDetailsList"></app-year-sales-details-list>
+</section>
